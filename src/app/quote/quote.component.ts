@@ -31,6 +31,14 @@ export class QuoteComponent implements OnInit {
 toggleDetails(index){
   this.quotes[index].showDescription=!this.quotes[index].showDescription;
 }
+
+addNewQuote(quote){
+  let quoteLength=this.quotes.length;
+  quote.id=quoteLength+1;
+  quote.completeDate=new Date(quote.completeDate);
+  this.quotes.push(quote);
+}
+
 deleteQuote(isComplete,index){
   if(isComplete){
     let toDelete=confirm(`Are you really sure you want to delete ${this.quotes[index].author}?`);
@@ -40,32 +48,6 @@ deleteQuote(isComplete,index){
     }
   }
 }
-
-addNewQuote(quote){
-  let quoteLength=this.quotes.length;
-  quote.id=quoteLength+1;
-  quote.completeDate=new Date(quote.completeDate);
-  this.quotes.push(quote);
-}
-
-// var app = quote.module("myModule", [])
-// 		.controller("myController" , function($scope){
- 
-// 	var members =[
-// 		{author: "Celine Kerrine", Votes: 0},
-// 		{author: "Claire Temple", Votes: 0},
-// 	];					
- 
-// 	$scope.members = members;
- 
-// 	$scope.incrementUp = function(member){
-// 		member.Votes++;
-// 	}
-// 	$scope.incrementDown = function(member){
-// 		member.Votes--;
-// 	}
-// });	
-
 
   constructor() { }
 
