@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* body{
+body{
     background-image: url("https://bit.ly/2saLzkM");
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@ p,h2{
 }
 span{
     color: indigo;
-} */
+}
 
 @import "~bootstrap/dist/css/bootstrap.css"
 
