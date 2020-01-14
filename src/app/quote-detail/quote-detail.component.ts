@@ -7,10 +7,13 @@ import { Quote } from '@angular/compiler';
   styleUrls: ['./quote-detail.component.css']
 })
 export class QuoteDetailComponent implements OnInit {
-  @Input()quote:Quote;
-  @Output()isComplete=new EventEmitter<boolean>();
+  @Input() quote :Quote;
+  @Output()isComplete = new EventEmitter<boolean>();
 
   quoteComplete(complete:boolean){
+    this.isComplete.emit(complete);
+  }
+  quoteDelete(complete:boolean){
     this.isComplete.emit(complete);
   }
   constructor() { }

@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("https://bit.ly/2saLzkM");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 2px;
+    padding: 150px;
+}
+h1{
+    font-size: 70px;
+}
+p{
+    font-size: 20px;
+}
+
+@import "~bootstrap/dist/css/bootstrap.css"
+

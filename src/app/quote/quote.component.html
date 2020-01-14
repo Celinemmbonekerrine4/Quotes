@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Quotes</title>
-</head>
-<body>
-        <div>
-                <h1>Inspirational Quotes</h1>
-                <hr>
-            <ul>
-                <div *ngFor="let quote of quotes; let i=index">
-                    <li>{{quote.name}}</li>
-
-                    <button (click)="toggleDetails(i)">Toggle Details</button>
-
-                    <app-quote-detail *ngIf="quote.showAuthor" [quote]='quote' (isComplete)='completeQuote($event,i)'></app-quote-detail>
-                </div> 
-            </ul>
-            <p>Get a quote, rate the quote then Add a <strong>SUPER INSPIRATIONAL</strong> quote.</p>
-            </div>
-            
-</body>
-</html>
+<div class="container">
+    <h1>My Quotes</h1>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let quote of quotes;let i = index'>
+          <div>
+            <h4 id={{i}} appStrikethrough>{{quote.author}} due on {{quote.completeDate|date|uppercase}}</h4>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          </div>
+  
+          <div *ngIf='quote.showDescription'>
+            <app-quote-detail  [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+      </div>
+    </div>
+  
+    <p *ngIf='quote.length > 5'>You have too many quotes</p>
+  </div>
