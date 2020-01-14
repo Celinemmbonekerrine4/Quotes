@@ -1,1 +1,4 @@
-<button class="btn btn-outline-danger" (click)= 'quoteDelete(true)' >Delete Quote</button>
+
+<button class="btn btn-like" (click)="voteUp()" type="submit"><span>{{upvote}}Likes</span></button>
+<br><button class="btn btn-dislike" (click)="voteDown()" type="submit"><span>{{downvote}}Dislikes</span></button>
+<br><button class="btn btn-outline-danger" (click)= 'quoteDelete(true)' >Delete Quote</button>

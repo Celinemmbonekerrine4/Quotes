@@ -8,9 +8,14 @@ body{
 }
 h1{
     font-size: 70px;
+    font-family: 'Satisfy', cursive;
 }
-p{
+p,h2{
     font-size: 20px;
+    font-family: 'Handlee', cursive;
+}
+span{
+    color: indigo;
 }
 
 @import "~bootstrap/dist/css/bootstrap.css"
